@@ -48,6 +48,7 @@ public class bj_1707 {
 		return true;
 	}
 
+	//메인함수
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
