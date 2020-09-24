@@ -74,7 +74,6 @@ public class bj_9370 {
 		}
 	}
 
-	// 이전 방문으로 못 돌아가게?
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int test = Integer.parseInt(br.readLine());
