@@ -32,7 +32,8 @@ public class bj_1966 {
 					Mimp=num;
 				}
 			}
-
+			
+			// 현재 가장 중요도가 높은 일의 중요도를 저장
 			int impcnt = 0;
 			for (int j = 9; j > 0; j--) {
 				if (importance[j] != 0) {
@@ -40,7 +41,8 @@ public class bj_1966 {
 					break;
 				}
 			}
-
+			
+			//중요도를 낮춰가며 중요도가 높은 일을 먼저 프린트한다.
 			int cnt = 0;
 			while (true) {
 				int nowprint = print.poll();
@@ -68,7 +70,7 @@ public class bj_1966 {
 					}
 				} else {
 					M = print.size();
-					if (impcnt == nowprint) {
+					if (impcnt == nowprint) {//현재 가장 중요한 중요도와 뽑아야하는 프린트의 중요도가 같을 경우 탈출
 						cnt++;
 						break;
 					} else {
