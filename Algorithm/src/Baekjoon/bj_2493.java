@@ -22,6 +22,7 @@ public class bj_2493 {
 			towerheight[i]=Integer.parseInt(tk.nextToken());
 		}
 		
+		// 탑의 높이 보다 작은 숫자들은 스택에서 꺼내며 정답에 마주친 탑을 저장한다.
 		for(int i=length-1;i>=0;i--){
 			while(!towers.isEmpty()&&towerheight[i]>=towers.peek()[1]){
 				answer[towers.peek()[0]]=i+1;
