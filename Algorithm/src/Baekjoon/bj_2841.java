@@ -61,10 +61,12 @@ public class bj_2841 {
 			
 			int l=Integer.parseInt(tk.nextToken())-1;
 			int pret=Integer.parseInt(tk.nextToken());
+			//잡은 현의 프렛보다 작으면 누른다.
 			if(line[l].isEmpty()||line[l].peek()<pret){
 				answer++;
 				line[l].add(pret);
 			}else if(line[l].peek()>pret){
+				//누른 현이 작거나 같은 수 가 될 때까지 혹은 모든 손을 뗄 때까지
 				while(true){
 					line[l].pop();
 					answer++;
