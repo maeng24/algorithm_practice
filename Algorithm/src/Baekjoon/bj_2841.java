@@ -9,38 +9,6 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class bj_2841 {
-	class line implements Comparable<line> {
-		private int linenum;
-		private int pret;
-
-		public line(int linenum, int pret) {
-			this.linenum = linenum;
-			this.pret = pret;
-		}
-
-		public int getLinenum() {
-			return linenum;
-		}
-
-		public void setLinenum(int linenum) {
-			this.linenum = linenum;
-		}
-
-		public int getPret() {
-			return pret;
-		}
-
-		public void setPret(int pret) {
-			this.pret = pret;
-		}
-
-		@Override
-		public int compareTo(line o) {
-			// TODO Auto-generated method stub
-			return this.pret - o.pret;
-		}
-
-	}
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
