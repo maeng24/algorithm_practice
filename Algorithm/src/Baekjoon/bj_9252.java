@@ -39,7 +39,7 @@ public class bj_9252 {
 				height--;
 			}else if(lcs[height][width]==lcs[height][width-1]){
 				width--;
-			}else if(lcs[height][width]-1 ==lcs[height-1][width-1]){//같으면 넣고 대각선 위로 이동
+			}else{//같으면 넣고 대각선 위로 이동
 				answer.push(ch1[height-1]);
 				height--;
 				width--;
