@@ -12,6 +12,7 @@ public class bj_14003 {
 	static int[] index;
 	static int topnum;
 	
+	//이분탐색으로 자리를 계산하는 함수
 	public static void checkpos(int number,int i){
 		int start=0;
 		int dest=topnum-1;
@@ -24,7 +25,7 @@ public class bj_14003 {
 				dest=mid;
 			}
 		}
-		index[i]=dest;
+		index[i]=dest;// 이 인덱스에 해당 자리의 숫자가 바뀌었음을 의미
 		checknumber[dest]=number;
 	}
 	
@@ -38,24 +39,28 @@ public class bj_14003 {
 		
 		StringTokenizer tk=new StringTokenizer(br.readLine()," ");
 		
+		//0번째 인덱스 넣기
 		topnum=0;
 		index=new int[N];
 		index[0]=0;
 		checknumber[topnum++]=Integer.parseInt(tk.nextToken());
 		numbers[0]=checknumber[topnum-1];
 		
+		
+		//1번째부터 계산한다.
 		for(int i=1;i<N;i++){
 			index[i]=i;
 			int number=Integer.parseInt(tk.nextToken());
 			numbers[i]=number;
-			if(checknumber[topnum-1]<number){
+			if(checknumber[topnum-1]<number){//맨 위 숫자보다 큰 수일 경우 넣어줌.
 				index[i]=topnum;
 				checknumber[topnum++]=number;
 			}else{
-				checkpos(number,i);
+				checkpos(number,i);//작으면 이분 탐색
 			}
 		}
 
+		//뒤에서 부터 계산함으로써 가장 나중에 바뀐 결과만을 저장한다.
 		int len=topnum-1;
 		Stack<Integer> ans=new Stack<>();
 		for(int i=N-1;i>=0;i--){
@@ -65,6 +70,7 @@ public class bj_14003 {
 			}
 		}
 		
+		//나중에 Stringbuilder를 써보자.
 		System.out.println(topnum);
 		while(!ans.isEmpty()){
 			System.out.print(ans.pop()+" ");
