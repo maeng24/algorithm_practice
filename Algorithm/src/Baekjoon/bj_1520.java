@@ -18,7 +18,7 @@ public class bj_1520 {
 	//dfs+dp
 	public static int checkroad(int ypos, int xpos) {
 		
-		if (ypos == y - 1 && xpos == x - 1) {
+		if (ypos == y - 1 && xpos == x - 1) {//if 문을 쓰는 대신 맨 dp배열에 1을 저장해도 된다.
 			return 1;
 		} else {
 			visit[ypos][xpos] = true;
