@@ -20,14 +20,16 @@ public class bj_9012 {
 			VPS=br.readLine().toCharArray();
 			int len=VPS.length;
 			flag=false;
+			
+			//괄호 검사
 			for(int j=0;j<len;j++){
-				if(VPS[j]=='('){
+				if(VPS[j]=='('){//시작하는 괄호는 스택에 넣는다.
 					stack.push(VPS[j]);
 				}else{
-					if(stack.isEmpty()){
+					if(stack.isEmpty()){//짝이 맞지 않으면 실패
 						flag=true;
 						break;
-					}else{
+					}else{//짝이 맞으면 괄호를 스택에서 빼고 계속한다.
 						stack.pop();
 					}
 				}
