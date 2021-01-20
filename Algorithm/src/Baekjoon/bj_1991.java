@@ -56,6 +56,7 @@ public class bj_1991 {
 			tree[n][1] = (int)(tk.nextToken().charAt(0) - 65);
 		}
 
+		//순회 
 		preorder(0);
 		inorder(0);
 		postorder(0);
