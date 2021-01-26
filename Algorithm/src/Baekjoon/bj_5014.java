@@ -28,6 +28,7 @@ public class bj_5014 {
 		curfloor.add(S);
 		visit[S]=true;
 
+		//bfs로 방문할 수 있는 층 확인
 		while (!curfloor.isEmpty()) {
 			int len = curfloor.size();
 			for (int i = 0; i < len; i++) {
@@ -35,7 +36,7 @@ public class bj_5014 {
 				if (cur == G) {
 					success = true;
 					break;
-				} else {
+				} else {//이미 방문한 층은 확인하지 않는다.
 					int next = cur + U;
 					if (next<=F&&!visit[next]){
 						visit[next]=true;
@@ -53,6 +54,8 @@ public class bj_5014 {
 			}
 			count++;
 		}
+		
+		//방문에 성공했으면 count, queue가 다 빌 때 까지 방문하지 못했으면 use the stairs 출력
 		if(success){
 			System.out.println(count);
 		}else{
