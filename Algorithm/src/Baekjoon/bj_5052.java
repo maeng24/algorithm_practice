@@ -14,22 +14,31 @@ public class bj_5052 {
 		for(int i=0;i<t;i++){
 			boolean success=true;
 			int n=Integer.parseInt(br.readLine());
-			String[] numbers=new String[n];
+			System.out.println(n);
+			int[] numbers=new int[n];
 			int minlen=10;
 			for(int j=0;j<n;j++){
-				numbers[j]=br.readLine();
-				minlen=Math.min(numbers[j].length(), minlen);
-				Arrays.sort(numbers);
+				String str=br.readLine();
+				numbers[j]=Integer.parseInt(str);
+				System.out.println(str.length()+" "+minlen);
+				minlen=Math.min(str.length(), minlen);
 			}
+			Arrays.sort(numbers);
 			
-			HashMap<String, Integer> makelist=new HashMap<>();
+			HashMap<Integer, Integer> makelist=new HashMap<>();
+			int divide=(int)Math.pow(10, minlen);
+			System.out.println(divide);
 			for(int j=0;j<n;j++){
-				String str=numbers[j].substring(0,minlen);
-				if(makelist.containsKey(str)){
+				int number=numbers[j];
+				while(number>divide){
+					number/=10;
+				}
+				System.out.println(makelist.containsKey(number));
+				if(makelist.containsKey(number)){
 					success=false;
 					break;
 				}else{
-					makelist.get(str);
+					makelist.put(number,1);
 				}
 			}
 			if(success){
