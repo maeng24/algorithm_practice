@@ -17,7 +17,7 @@ public class bj_15684 {
 		}else{
 			
 			for(int i=0;i<H;i++){
-				for(int j=0;j<N;j++){
+				for(int j=0;j<E;j++){
 					if(i==0&&j==0){
 						i=y;
 						j=x;
