@@ -27,6 +27,7 @@ public class bj_1743 {
 				for (int j = 0; j < 4; j++) {
 					nexty = y + ypos[j];
 					nextx = x + xpos[j];
+					//해당 자리에 방문했는지 확인하고 큐에 넣는다. (음식물 사이즈 ++)
 					if (nextx >= 0 && nexty >= 0 && nextx < M && nexty < N && map[nexty][nextx]
 							&& !visit[nexty][nextx]) {
 						pos.add(new int[] { nexty, nextx });
@@ -60,7 +61,7 @@ public class bj_1743 {
 		
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
-				if (map[i][j] && !visit[i][j]) {
+				if (map[i][j] && !visit[i][j]) {//방문하지 않은 곳에 음식물이 있을경우 bfs실행
 					visit[i][j]=true;
 					bfs(i, j, 1);
 				}
