@@ -26,12 +26,14 @@ public class bj_1655 {
 				minheap.add(Integer.parseInt(br.readLine()));
 			}
 			
+			//최소힙과 최대힙의 앞 순서 숫자 swap 해주기
 			if(!minheap.isEmpty()&&!maxheap.isEmpty()&&maxheap.peek()<minheap.peek()){
 				int tmp=minheap.poll();
 				minheap.add(maxheap.poll());
 				maxheap.add(tmp);
 			}
 			
+			//짝수일 경우에는 작은 수를 말한다.
 			if(maxheap.size()>minheap.size()){
 				bw.write(maxheap.peek()+"\n");
 			}else{
