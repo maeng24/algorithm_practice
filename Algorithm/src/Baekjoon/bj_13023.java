@@ -12,6 +12,7 @@ public class bj_13023 {
 	static ArrayList<Integer>[] friends;
 	static boolean[] visit;
 
+	//dfs로 탐색
 	public static int dfs(int index, int depth) {
 		if (depth == 5) {
 			return 1;
@@ -37,6 +38,7 @@ public class bj_13023 {
 		N = Integer.parseInt(tk.nextToken());
 		int m = Integer.parseInt(tk.nextToken());
 
+		//시간초과를 막기 위해 어레이리스트로 선언
 		friends=new ArrayList[N];
 		for (int i = 0; i < N; i++) {
 			friends[i] = new ArrayList<>();
