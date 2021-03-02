@@ -12,15 +12,18 @@ public class bj_1967 {
 
 	static ArrayList<int[]>[] tree;
 
+	//dfs로 거리를 계산한다.
 	public static int dfs(int index, int dis) {
 		if (tree[index].size() == 0) {
 			return dis;
 		} else if (dis == 0) {
+			//binary tree가 아닐 수 있으므로 가장 가중치가 높은 2개를 확인해야 한다.
 			PriorityQueue<Integer> pqueue = new PriorityQueue<>(Collections.reverseOrder());
 			int len = tree[index].size();
 			for (int i = 0; i < len; i++) {
 				pqueue.add(dfs(tree[index].get(i)[0], tree[index].get(i)[1]));
 			}
+			//자식노드 갯수에 따른 리턴
 			if (pqueue.size() > 1) {
 				return pqueue.poll() + pqueue.poll();
 			} else if (pqueue.size() == 1) {
@@ -29,7 +32,7 @@ public class bj_1967 {
 				return 0;
 			}
 
-		} else {
+		} else {//이미 한 번 이상 연결되어 재귀하고 있는 경우
 			int max = 0;
 			int len = tree[index].size();
 			for (int i = 0; i < len; i++) {
@@ -48,6 +51,7 @@ public class bj_1967 {
 		for (int i = 0; i <= n; i++) {
 			tree[i] = new ArrayList<>();
 		}
+		
 		n -= 1;
 		StringTokenizer tk = null;
 		for (int i = 0; i < n; i++) {
@@ -55,6 +59,7 @@ public class bj_1967 {
 			tree[Integer.parseInt(tk.nextToken())]
 					.add(new int[] { Integer.parseInt(tk.nextToken()), Integer.parseInt(tk.nextToken()) });
 		}
+		
 		int answer = 0;
 		n += 1;
 		for (int i = 0; i <= n; i++) {
