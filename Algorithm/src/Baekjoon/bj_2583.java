@@ -10,8 +10,8 @@ public class bj_2583 {
 
 	static int x, y, n;
 	static boolean[][] check = new boolean[100][100];
-	int[] move_x = { 1, 0, -1, 0 };
-	int[] move_y = { 0, 1, 0, -1 };
+	static int[] move_x = { 1, 0, -1, 0 };
+	static int[] move_y = { 0, 1, 0, -1 };
 
 	public static int dfs(int xx, int yy) {
 		int num = 1;
