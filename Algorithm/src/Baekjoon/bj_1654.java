@@ -11,17 +11,20 @@ public class bj_1654 {
 	static int K,N;
 	static long maxlen=0;
 	
+	//이분탐색으로 선의 갯수 구하기
 	public static void binarySearch(long start, long end) {
 		long mid = (start + end) / 2;
 
-		long linelen = 0;
+		long linenum = 0;
 
+		//필요한 갯수만큼 나오는지 확인하기 위해 정해진 갯수대로 전부 자른다.
 		for (int i = 0; i < K; i++) {
-			linelen += lines[i] / mid;
+			linenum += lines[i] / mid;	
 		}
 
+		//갯수에 따라 이분탐색 진행
 		if (start <= end) {
-			if (linelen < N) { 
+			if (linenum < N) { 
 				binarySearch(start, mid - 1);
 			} else { 
 				maxlen=Math.max(mid, maxlen);
@@ -29,6 +32,7 @@ public class bj_1654 {
 			}
 		}
 	}
+	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
