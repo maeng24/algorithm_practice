@@ -17,7 +17,7 @@ public class bj_1654 {
 
 		long linenum = 0;
 
-		//필요한 갯수만큼 나오는지 확인하기 위해 정해진 갯수대로 전부 자른다.
+		//필요한 갯수만큼 나오는지 확인하기 위해 정해진 갯수대로 전부 자른다.z
 		for (int i = 0; i < K; i++) {
 			linenum += lines[i] / mid;	
 		}
