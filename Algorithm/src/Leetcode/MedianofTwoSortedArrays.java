@@ -48,7 +48,7 @@ public class MedianofTwoSortedArrays {
 					nums[nums_idx++] = nums2[nums2_idx++];
 				} else if (nums2_idx == nums2len) { //둘 중 하나의 인덱스라도 끝에 도달하면 다른 배열만 가져온다.
 					nums[nums_idx++] = nums1[nums1_idx++];
-				} else {//두 배열을 비교하여 더 적은 값을 가져온다.
+				} else {//두 배열을 비교하여 더 작은 값을 가져온다.
 					if (nums1[nums1_idx] < nums2[nums2_idx]) {
 						nums[nums_idx++] = nums1[nums1_idx++];
 					} else if (nums1[nums1_idx] > nums2[nums2_idx]) {
